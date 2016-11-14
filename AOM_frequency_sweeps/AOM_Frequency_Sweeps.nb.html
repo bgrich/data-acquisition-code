@@ -174,16 +174,37 @@ $(document).ready(function () {
 
 <!-- rnb-text-begin -->
 <p>This is a collection of code used to run the AOM frequency sweep for the atom control project. Each file set will be broken in to the various chunks. Sets that have more than one file will all be within one chunk.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShcInRpZHl2ZXJzZVwiKVxuYGBgIn0= -->
+<pre class="r"><code>library(&quot;tidyverse&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoicGFja2FnZSDigJh0aWR5dmVyc2XigJkgd2FzIGJ1aWx0IHVuZGVyIFIgdmVyc2lvbiAzLjIuNUxvYWRpbmcgdGlkeXZlcnNlOiBnZ3Bsb3QyXG5Mb2FkaW5nIHRpZHl2ZXJzZTogdGliYmxlXG5Mb2FkaW5nIHRpZHl2ZXJzZTogdGlkeXJcbkxvYWRpbmcgdGlkeXZlcnNlOiByZWFkclxuTG9hZGluZyB0aWR5dmVyc2U6IHB1cnJyXG5Mb2FkaW5nIHRpZHl2ZXJzZTogZHBseXJcbnBhY2thZ2Ug4oCYdGliYmxl4oCZIHdhcyBidWlsdCB1bmRlciBSIHZlcnNpb24gMy4yLjVwYWNrYWdlIOKAmHRpZHly4oCZIHdhcyBidWlsdCB1bmRlciBSIHZlcnNpb24gMy4yLjVwYWNrYWdlIOKAmHJlYWRy4oCZIHdhcyBidWlsdCB1bmRlciBSIHZlcnNpb24gMy4yLjVwYWNrYWdlIOKAmHB1cnJy4oCZIHdhcyBidWlsdCB1bmRlciBSIHZlcnNpb24gMy4yLjVDb25mbGljdHMgd2l0aCB0aWR5IHBhY2thZ2VzIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tXG5maWx0ZXIoKTogZHBseXIsIHN0YXRzXG5sYWcoKTogICAgZHBseXIsIHN0YXRzXG4ifQ== -->
+<pre><code>package ‘tidyverse’ was built under R version 3.2.5Loading tidyverse: ggplot2
+Loading tidyverse: tibble
+Loading tidyverse: tidyr
+Loading tidyverse: readr
+Loading tidyverse: purrr
+Loading tidyverse: dplyr
+package ‘tibble’ was built under R version 3.2.5package ‘tidyr’ was built under R version 3.2.5package ‘readr’ was built under R version 3.2.5package ‘purrr’ was built under R version 3.2.5Conflicts with tidy packages -----------------------------------------------
+filter(): dplyr, stats
+lag():    dplyr, stats</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 <div id="sweep-test" class="section level3">
 <h3>20161114 Sweep Test</h3>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZnJlcV9mcmFtZVxuYGBgIn0= -->
+<pre class="r"><code>freq_frame</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIkFPTSBGcmVxdWVuY3kgU3dlZXBzIg0Kb3V0cHV0OiBodG1sX25vdGVib29rDQotLS0NCg0KVGhpcyBpcyBhIGNvbGxlY3Rpb24gb2YgY29kZSB1c2VkIHRvIHJ1biB0aGUgQU9NIGZyZXF1ZW5jeSBzd2VlcCBmb3IgdGhlIGF0b20gDQpjb250cm9sIHByb2plY3QuIEVhY2ggZmlsZSBzZXQgd2lsbCBiZSBicm9rZW4gaW4gdG8gdGhlIHZhcmlvdXMgY2h1bmtzLiANClNldHMgdGhhdCBoYXZlIG1vcmUgdGhhbiBvbmUgZmlsZSB3aWxsIGFsbCBiZSB3aXRoaW4gb25lIGNodW5rLg0KDQojIyMgMjAxNjExMTQgU3dlZXAgVGVzdA0KDQoNCmBgYHtyIDIwMTYxMTQgc3dlZXAgdGVzdH0NCg0KYGBgDQoNCg==</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIkFPTSBGcmVxdWVuY3kgU3dlZXBzIg0Kb3V0cHV0OiBodG1sX25vdGVib29rDQotLS0NCg0KVGhpcyBpcyBhIGNvbGxlY3Rpb24gb2YgY29kZSB1c2VkIHRvIHJ1biB0aGUgQU9NIGZyZXF1ZW5jeSBzd2VlcCBmb3IgdGhlIGF0b20gDQpjb250cm9sIHByb2plY3QuIEVhY2ggZmlsZSBzZXQgd2lsbCBiZSBicm9rZW4gaW4gdG8gdGhlIHZhcmlvdXMgY2h1bmtzLiANClNldHMgdGhhdCBoYXZlIG1vcmUgdGhhbiBvbmUgZmlsZSB3aWxsIGFsbCBiZSB3aXRoaW4gb25lIGNodW5rLg0KDQpgYGB7ciBsaWJyYXJ5IGNhbGx9DQpsaWJyYXJ5KCJ0aWR5dmVyc2UiKQ0KYGBgDQoNCg0KIyMjIDIwMTYxMTE0IFN3ZWVwIFRlc3QNCg0KDQpgYGB7ciAyMDE2MTE0IHN3ZWVwIHRlc3R9DQpmcmVxX2ZyYW1lDQpgYGANCg0K</div>
 
 
 
