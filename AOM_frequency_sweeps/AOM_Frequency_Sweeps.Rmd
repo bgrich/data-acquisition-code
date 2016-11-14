@@ -2,3 +2,15 @@
 title: "AOM Frequency Sweeps"
 output: html_notebook
 ---
+
+This is a collection of code used to run the AOM frequency sweep for the atom 
+control project. Each file set will be broken in to the various chunks. 
+Sets that have more than one file will all be within one chunk.
+
+### 20161114 Sweep Test
+
+
+```{r 2016114 sweep test}
+
+```
+
