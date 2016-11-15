@@ -226,64 +226,60 @@ for (i in 0:400) {
 </ul>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZnJlcV9mcmFtZV8zMF9NSHogPC0gdGliYmxlKGZyZXF1ZW5jeSA9IDUwZTYsIFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIHN0ZXAgPSBhcy5pbnRlZ2VyKGMoMSwgcmVwKDAsIHRpbWVzID0gOTkpKSkpXG5uZXdfZnJhbWUgPC0gdGliYmxlKGZyZXF1ZW5jeSA9IDg1ZTYsIFxuICAgICAgICAgICAgICAgICAgICBzdGVwID0gYXMuaW50ZWdlcigxKSlcbmBgYCJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZnJlcV9mcmFtZV8zMF9NSHogPC0gdGliYmxlKGZyZXF1ZW5jeSA9IDUwZTYsIFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIHN0ZXAgPSBhcy5pbnRlZ2VyKGMoMSwgcmVwKDAsIHRpbWVzID0gOTkpKSkpXG5uZXdfZnJhbWUgPC0gdGliYmxlKGZyZXF1ZW5jeSA9IDg1ZTYsIFxuICAgICAgICAgICAgICAgICAgICBzdGVwID0gYXMuaW50ZWdlcigxKSlcbmZyZXFfZnJhbWVfMzBfTUh6IDwtIHJiaW5kKGZyZXFfZnJhbWVfMzBfTUh6LCBuZXdfZnJhbWUpXG4jd3JpdGVfY3N2KGZyZXFfZnJhbWVfMzBfTUh6LCBcIkFPTV9mcmVxdWVuY3lfc3dlZXBzL0ZpbGVzLzIwMTYxMTE1XzMwTUh6X05vX0RlbGF5LmNzdlwiLCBjb2xfbmFtZXMgPSBGQUxTRSlcbmBgYCJ9 -->
 <pre class="r"><code>freq_frame_30_MHz &lt;- tibble(frequency = 50e6, 
                             step = as.integer(c(1, rep(0, times = 99))))
 new_frame &lt;- tibble(frequency = 85e6, 
-                    step = as.integer(1))</code></pre>
+                    step = as.integer(1))
+freq_frame_30_MHz &lt;- rbind(freq_frame_30_MHz, new_frame)
+#write_csv(freq_frame_30_MHz, &quot;AOM_frequency_sweeps/Files/20161115_30MHz_No_Delay.csv&quot;, col_names = FALSE)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZnJlcV9mcmFtZV8zMF9NSHogPC0gdGliYmxlKGZyZXF1ZW5jeSA9IDUwZTYsIFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIHN0ZXAgPSBhcy5pbnRlZ2VyKGMoMSwgcmVwKDAsIHRpbWVzID0gOTkpKSkpXG5uZXdfZnJhbWUgPC0gdGliYmxlKGZyZXF1ZW5jeSA9IDg1ZTYsIFxuICAgICAgICAgICAgICAgICAgICBzdGVwID0gYXMuaW50ZWdlcihjKDEsIDApKSlcbmZyZXFfZnJhbWVfMzBfTUh6IDwtIHJiaW5kKGZyZXFfZnJhbWVfMzBfTUh6LCBuZXdfZnJhbWUpXG4jd3JpdGVfY3N2KGZyZXFfZnJhbWVfMzBfTUh6LCBcIkFPTV9mcmVxdWVuY3lfc3dlZXBzL0ZpbGVzLzIwMTYxMTE1XzMwTUh6XzEwX21zX2RlbGF5LmNzdlwiLCBjb2xfbmFtZXMgPSlcbmBgYCJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZnJlcV9mcmFtZV8zMF9NSHogPC0gdGliYmxlKGZyZXF1ZW5jeSA9IDUwZTYsIFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIHN0ZXAgPSBhcy5pbnRlZ2VyKGMoMSwgcmVwKDAsIHRpbWVzID0gOTkpKSkpXG5uZXdfZnJhbWUgPC0gdGliYmxlKGZyZXF1ZW5jeSA9IDg1ZTYsIFxuICAgICAgICAgICAgICAgICAgICBzdGVwID0gYXMuaW50ZWdlcihjKDEsIDApKSlcbmZyZXFfZnJhbWVfMzBfTUh6IDwtIHJiaW5kKGZyZXFfZnJhbWVfMzBfTUh6LCBuZXdfZnJhbWUpXG4jd3JpdGVfY3N2KGZyZXFfZnJhbWVfMzBfTUh6LCBcIkFPTV9mcmVxdWVuY3lfc3dlZXBzL0ZpbGVzLzIwMTYxMTE1XzMwTUh6XzEwX21zX2RlbGF5LmNzdlwiLCBjb2xfbmFtZXMgPSBGQUxTRSlcbmBgYCJ9 -->
 <pre class="r"><code>freq_frame_30_MHz &lt;- tibble(frequency = 50e6, 
                             step = as.integer(c(1, rep(0, times = 99))))
 new_frame &lt;- tibble(frequency = 85e6, 
                     step = as.integer(c(1, 0)))
 freq_frame_30_MHz &lt;- rbind(freq_frame_30_MHz, new_frame)
-#write_csv(freq_frame_30_MHz, &quot;AOM_frequency_sweeps/Files/20161115_30MHz_10_ms_delay.csv&quot;, col_names =)</code></pre>
+#write_csv(freq_frame_30_MHz, &quot;AOM_frequency_sweeps/Files/20161115_30MHz_10_ms_delay.csv&quot;, col_names = FALSE)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZnJlcV9mcmFtZV8zMF9NSHogPC0gdGliYmxlKGZyZXF1ZW5jeSA9IDUwZTYsIFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIHN0ZXAgPSBhcy5pbnRlZ2VyKGMoMSwgcmVwKDAsIHRpbWVzID0gOTkpKSkpXG5uZXdfZnJhbWUgPC0gdGliYmxlKGZyZXF1ZW5jeSA9IDg1ZTYsIFxuICAgICAgICAgICAgICAgICAgICBzdGVwID0gYXMuaW50ZWdlcihjKDEsIDAsIDApKSlcbmZyZXFfZnJhbWVfMzBfTUh6IDwtIHJiaW5kKGZyZXFfZnJhbWVfMzBfTUh6LCBuZXdfZnJhbWUpXG4jd3JpdGVfY3N2KGZyZXFfZnJhbWVfMzBfTUh6LCBcIkFPTV9mcmVxdWVuY3lfc3dlZXBzL0ZpbGVzLzIwMTYxMTE1XzMwTUh6XzIwX21zX2RlbGF5LmNzdlwiLCBjb2xfbmFtZXMgPSlcbmBgYCJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZnJlcV9mcmFtZV8zMF9NSHogPC0gdGliYmxlKGZyZXF1ZW5jeSA9IDUwZTYsIFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIHN0ZXAgPSBhcy5pbnRlZ2VyKGMoMSwgcmVwKDAsIHRpbWVzID0gOTkpKSkpXG5uZXdfZnJhbWUgPC0gdGliYmxlKGZyZXF1ZW5jeSA9IDg1ZTYsIFxuICAgICAgICAgICAgICAgICAgICBzdGVwID0gYXMuaW50ZWdlcihjKDEsIDAsIDApKSlcbmZyZXFfZnJhbWVfMzBfTUh6IDwtIHJiaW5kKGZyZXFfZnJhbWVfMzBfTUh6LCBuZXdfZnJhbWUpXG4jd3JpdGVfY3N2KGZyZXFfZnJhbWVfMzBfTUh6LCBcIkFPTV9mcmVxdWVuY3lfc3dlZXBzL0ZpbGVzLzIwMTYxMTE1XzMwTUh6XzIwX21zX2RlbGF5LmNzdlwiLCBjb2xfbmFtZXMgPSBGQUxTRSlcbmBgYCJ9 -->
 <pre class="r"><code>freq_frame_30_MHz &lt;- tibble(frequency = 50e6, 
                             step = as.integer(c(1, rep(0, times = 99))))
 new_frame &lt;- tibble(frequency = 85e6, 
                     step = as.integer(c(1, 0, 0)))
 freq_frame_30_MHz &lt;- rbind(freq_frame_30_MHz, new_frame)
-#write_csv(freq_frame_30_MHz, &quot;AOM_frequency_sweeps/Files/20161115_30MHz_20_ms_delay.csv&quot;, col_names =)</code></pre>
+#write_csv(freq_frame_30_MHz, &quot;AOM_frequency_sweeps/Files/20161115_30MHz_20_ms_delay.csv&quot;, col_names = FALSE)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZnJlcV9mcmFtZV8zMF9NSHogPC0gdGliYmxlKGZyZXF1ZW5jeSA9IDUwZTYsIFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIHN0ZXAgPSBhcy5pbnRlZ2VyKGMoMSwgcmVwKDAsIHRpbWVzID0gOTkpKSkpXG5cbm5ld19mcmFtZSA8LSB0aWJibGUoZnJlcXVlbmN5ID0gODVlNiwgXG4gICAgICAgICAgICAgICAgICAgIHN0ZXAgPSBhcy5pbnRlZ2VyKGMoMSwgcmVwKDAsIHRpbWVzID0gMTApKSkpXG5cbmZyZXFfZnJhbWVfMzBfTUh6IDwtIHJiaW5kKGZyZXFfZnJhbWVfMzBfTUh6LCBuZXdfZnJhbWUpXG5cbiN3cml0ZV9jc3YoZnJlcV9mcmFtZV8zMF9NSHosIFwiQU9NX2ZyZXF1ZW5jeV9zd2VlcHMvRmlsZXMvMjAxNjExMTVfMzBNSHpfMTAwX21zX2RlbGF5LmNzdlwiLCBjb2xfbmFtZXMgPSBGQUxTRSlcbmBgYCJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZnJlcV9mcmFtZV8zMF9NSHogPC0gdGliYmxlKGZyZXF1ZW5jeSA9IDUwZTYsIFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIHN0ZXAgPSBhcy5pbnRlZ2VyKGMoMSwgcmVwKDAsIHRpbWVzID0gOTkpKSkpXG5uZXdfZnJhbWUgPC0gdGliYmxlKGZyZXF1ZW5jeSA9IDg1ZTYsIFxuICAgICAgICAgICAgICAgICAgICBzdGVwID0gYXMuaW50ZWdlcihjKDEsIHJlcCgwLCB0aW1lcyA9IDEwKSkpKVxuZnJlcV9mcmFtZV8zMF9NSHogPC0gcmJpbmQoZnJlcV9mcmFtZV8zMF9NSHosIG5ld19mcmFtZSlcbiN3cml0ZV9jc3YoZnJlcV9mcmFtZV8zMF9NSHosIFwiQU9NX2ZyZXF1ZW5jeV9zd2VlcHMvRmlsZXMvMjAxNjExMTVfMzBNSHpfMTAwX21zX2RlbGF5LmNzdlwiLCBjb2xfbmFtZXMgPSBGQUxTRSlcbmBgYCJ9 -->
 <pre class="r"><code>freq_frame_30_MHz &lt;- tibble(frequency = 50e6, 
                             step = as.integer(c(1, rep(0, times = 99))))
-
 new_frame &lt;- tibble(frequency = 85e6, 
                     step = as.integer(c(1, rep(0, times = 10))))
-
 freq_frame_30_MHz &lt;- rbind(freq_frame_30_MHz, new_frame)
-
 #write_csv(freq_frame_30_MHz, &quot;AOM_frequency_sweeps/Files/20161115_30MHz_100_ms_delay.csv&quot;, col_names = FALSE)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZnJlcV9mcmFtZV8zMF9NSHogPC0gdGliYmxlKGZyZXF1ZW5jeSA9IDUwZTYsIFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIHN0ZXAgPSBhcy5pbnRlZ2VyKGMoMSwgcmVwKDAsIHRpbWVzID0gOTkpKSkpXG5cbm5ld19mcmFtZSA8LSB0aWJibGUoZnJlcXVlbmN5ID0gODVlNiwgXG4gICAgICAgICAgICAgICAgICAgIHN0ZXAgPSBhcy5pbnRlZ2VyKGMoMSwgcmVwKDAsIHRpbWVzID0gMTAwKSkpKVxuXG5mcmVxX2ZyYW1lXzMwX01IeiA8LSByYmluZChmcmVxX2ZyYW1lXzMwX01IeiwgbmV3X2ZyYW1lKVxuXG4jd3JpdGVfY3N2KGZyZXFfZnJhbWVfMzBfTUh6LCBcIkFPTV9mcmVxdWVuY3lfc3dlZXBzL0ZpbGVzLzIwMTYxMTE1XzMwTUh6XzEwMDBfbXNfZGVsYXkuY3N2XCIsIGNvbF9uYW1lcyA9IEZBTFNFKVxuYGBgIn0= -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZnJlcV9mcmFtZV8zMF9NSHogPC0gdGliYmxlKGZyZXF1ZW5jeSA9IDUwZTYsIFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIHN0ZXAgPSBhcy5pbnRlZ2VyKGMoMSwgcmVwKDAsIHRpbWVzID0gOTkpKSkpXG5uZXdfZnJhbWUgPC0gdGliYmxlKGZyZXF1ZW5jeSA9IDg1ZTYsIFxuICAgICAgICAgICAgICAgICAgICBzdGVwID0gYXMuaW50ZWdlcihjKDEsIHJlcCgwLCB0aW1lcyA9IDEwMCkpKSlcbmZyZXFfZnJhbWVfMzBfTUh6IDwtIHJiaW5kKGZyZXFfZnJhbWVfMzBfTUh6LCBuZXdfZnJhbWUpXG4jd3JpdGVfY3N2KGZyZXFfZnJhbWVfMzBfTUh6LCBcIkFPTV9mcmVxdWVuY3lfc3dlZXBzL0ZpbGVzLzIwMTYxMTE1XzMwTUh6XzEwMDBfbXNfZGVsYXkuY3N2XCIsIGNvbF9uYW1lcyA9IEZBTFNFKVxuYGBgIn0= -->
 <pre class="r"><code>freq_frame_30_MHz &lt;- tibble(frequency = 50e6, 
                             step = as.integer(c(1, rep(0, times = 99))))
-
 new_frame &lt;- tibble(frequency = 85e6, 
                     step = as.integer(c(1, rep(0, times = 100))))
-
 freq_frame_30_MHz &lt;- rbind(freq_frame_30_MHz, new_frame)
-
 #write_csv(freq_frame_30_MHz, &quot;AOM_frequency_sweeps/Files/20161115_30MHz_1000_ms_delay.csv&quot;, col_names = FALSE)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
