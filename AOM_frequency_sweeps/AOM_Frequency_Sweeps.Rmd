@@ -44,4 +44,12 @@ constant and at the max level.
 
 To test the effect of the end of a frequency sweep we will start with 1 second 
 of large detuning for MOT recovery (+100 MHz from resonance). We will then go 
-to a +30 MHz detuning and sit there for several 
+to a +30 MHz detuning and sit there for various delays: 
+
+* No delay
+* 1 ms
+* 5 ms 
+* 10 ms 
+* 20 ms
+* 100 ms
+* 1 s
