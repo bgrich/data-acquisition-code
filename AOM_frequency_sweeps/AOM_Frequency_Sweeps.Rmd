@@ -66,3 +66,50 @@ freq_frame_30_MHz <- rbind(freq_frame_30_MHz, new_frame)
 #write_csv(freq_frame_30_MHz, "AOM_frequency_sweeps/Files/20161115_30MHz_No_Delay.csv", col_names =)
 ```
 
+```{r}
+freq_frame_30_MHz <- tibble(frequency = 50e6, 
+                            step = as.integer(c(1, rep(0, times = 99))))
+
+new_frame <- tibble(frequency = 85e6, 
+                    step = as.integer(c(1, 0)))
+
+freq_frame_30_MHz <- rbind(freq_frame_30_MHz, new_frame)
+
+#write_csv(freq_frame_30_MHz, "AOM_frequency_sweeps/Files/20161115_30MHz_10_ms_delay.csv", col_names =)
+```
+
+```{r}
+freq_frame_30_MHz <- tibble(frequency = 50e6, 
+                            step = as.integer(c(1, rep(0, times = 99))))
+
+new_frame <- tibble(frequency = 85e6, 
+                    step = as.integer(c(1, 0, 0)))
+
+freq_frame_30_MHz <- rbind(freq_frame_30_MHz, new_frame)
+
+#write_csv(freq_frame_30_MHz, "AOM_frequency_sweeps/Files/20161115_30MHz_20_ms_delay.csv", col_names =)
+```
+
+```{r}
+freq_frame_30_MHz <- tibble(frequency = 50e6, 
+                            step = as.integer(c(1, rep(0, times = 99))))
+
+new_frame <- tibble(frequency = 85e6, 
+                    step = as.integer(c(1, rep(0, times = 10))))
+
+freq_frame_30_MHz <- rbind(freq_frame_30_MHz, new_frame)
+
+#write_csv(freq_frame_30_MHz, "AOM_frequency_sweeps/Files/20161115_30MHz_100_ms_delay.csv", col_names =)
+```
+
+```{r}
+freq_frame_30_MHz <- tibble(frequency = 50e6, 
+                            step = as.integer(c(1, rep(0, times = 99))))
+
+new_frame <- tibble(frequency = 85e6, 
+                    step = as.integer(c(1, rep(0, times = 100))))
+
+freq_frame_30_MHz <- rbind(freq_frame_30_MHz, new_frame)
+
+#write_csv(freq_frame_30_MHz, "AOM_frequency_sweeps/Files/20161115_30MHz_1000_ms_delay.csv", col_names =)
+```
