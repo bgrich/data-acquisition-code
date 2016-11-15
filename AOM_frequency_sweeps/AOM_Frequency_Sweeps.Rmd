@@ -53,3 +53,16 @@ to a +30 MHz detuning and sit there for various delays:
 * 20 ms
 * 100 ms
 * 1 s
+
+```{r}
+freq_frame_30_MHz <- tibble(frequency = 50e6, 
+                            step = as.integer(c(1, rep(0, times = 99))))
+
+new_frame <- tibble(frequency = 85e6, 
+                    step = as.integer(1))
+
+freq_frame_30_MHz <- rbind(freq_frame_30_MHz, new_frame)
+
+#write_csv(freq_frame_30_MHz, "AOM_frequency_sweeps/Files/20161115_30MHz_No_Delay.csv", col_names =)
+```
+
