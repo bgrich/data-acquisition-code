@@ -21,7 +21,7 @@ for (i in 0:400) {
   
   frequency <- 60e6 + i * frequency_step
   
-  new_frame <- tibble(freuency = frequency, step = as.integer(c(1, rep(0, times = 9)))) 
+  new_frame <- tibble(frequency = frequency, step = as.integer(c(1, rep(0, times = 9)))) 
   
   freq_frame <- rbind(freq_frame, new_frame)
 }
@@ -41,3 +41,7 @@ For all of these the laser power, atomic density, and offset field will be
 constant and at the max level.
 
 ### End of sweep delay
+
+To test the effect of the end of a frequency sweep we will start with 1 second 
+of large detuning for MOT recovery (+100 MHz from resonance). We will then go 
+to a +30 MHz detuning and sit there for several 
