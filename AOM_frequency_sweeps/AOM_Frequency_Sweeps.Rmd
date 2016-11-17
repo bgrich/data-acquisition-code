@@ -123,9 +123,9 @@ freq_frame_40_MHz <- tibble(frequency = 50e6,
                             step = as.integer(c(1, rep(0, times = 99))))
 
 new_frame <- tibble(frequency = 80e6, 
-                    step = as.integer(c(1, rep(0, times = 1))))
+                    step = as.integer(c(1, rep(0, times = 0))))
 
 freq_frame_40_MHz <- rbind(freq_frame_40_MHz, new_frame)
 
-#write_csv(freq_frame_40_MHz, "AOM_frequency_sweeps/Files/20161116_40MHz_10_ms_delay.csv", col_names = FALSE)
+#write_csv(freq_frame_40_MHz, "AOM_frequency_sweeps/Files/20161116_40MHz_no_delay.csv", col_names = FALSE)
 ```
