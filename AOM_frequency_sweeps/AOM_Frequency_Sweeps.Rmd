@@ -123,7 +123,7 @@ freq_frame_40_MHz <- tibble(frequency = 50e6,
                             step = as.integer(c(1, rep(0, times = 99))))
 
 new_frame <- tibble(frequency = 80e6, 
-                    step = as.integer(c(1, rep(0, times = 0))))
+                    step = as.integer(1))
 
 freq_frame_40_MHz <- rbind(freq_frame_40_MHz, new_frame)
 
