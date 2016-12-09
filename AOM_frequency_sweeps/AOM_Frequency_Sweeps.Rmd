@@ -366,6 +366,10 @@ freq_frame <- rbind(freq_frame, new_frame)
 
 ## 2016 12 09 Atom Control Frequency Sweeps
 
+These new sweeps contain 1 MHz step size and 5 MHz step sizes with a target 
+frequency of 82 MHz for the AOM. This will put the target frequency at the 
+maximum power output for the AOM.
+
 ### 1 MHz Steps
 
 ```{r}
