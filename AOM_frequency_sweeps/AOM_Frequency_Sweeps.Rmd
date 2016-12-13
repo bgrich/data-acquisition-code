@@ -363,3 +363,110 @@ freq_frame <- rbind(freq_frame, new_frame)
 
 #write_csv(freq_frame, "AOM_frequency_sweeps/Files/20161207_Max_Power_Single_Shot.csv", col_names = FALSE)
 ```
+
+## 2016 12 09 Atom Control Frequency Sweeps
+
+These new sweeps contain 1 MHz step size and 5 MHz step sizes with a target 
+frequency of 82 MHz for the AOM. This will put the target frequency at the 
+maximum power output for the AOM.
+
+### 1 MHz Steps
+
+```{r}
+freq_frame_70_MHz <- tibble(frequency = 50e6, 
+                            step = as.integer(c(1, rep(0, times = 99))))
+
+new_frame <- tibble(frequency = seq(62e6, 82e6, by = 5e5), 
+                    step = as.integer(1))
+
+freq_frame_70_MHz <- rbind(freq_frame_70_MHz, new_frame)
+
+#write_csv(freq_frame_70_MHz, "AOM_frequency_sweeps/Files/20161209_1_MHz_step_70MHz_sweep.csv", col_names = FALSE)
+```
+
+```{r}
+freq_frame_60_MHz <- tibble(frequency = 50e6, 
+                            step = as.integer(c(1, rep(0, times = 99))))
+
+new_frame <- tibble(frequency = seq(67e6, 82e6, by = 5e5), 
+                    step = as.integer(1))
+
+freq_frame_60_MHz <- rbind(freq_frame_60_MHz, new_frame)
+
+#write_csv(freq_frame_60_MHz, "AOM_frequency_sweeps/Files/20161209_1_MHz_step_60MHz_sweep.csv", col_names = FALSE)
+```
+
+```{r}
+freq_frame_50_MHz <- tibble(frequency = 50e6, 
+                            step = as.integer(c(1, rep(0, times = 99))))
+
+new_frame <- tibble(frequency = seq(72e6, 82e6, by = 5e5), 
+                    step = as.integer(1))
+
+freq_frame_50_MHz <- rbind(freq_frame_50_MHz, new_frame)
+
+#write_csv(freq_frame_50_MHz, "AOM_frequency_sweeps/Files/20161209_1_MHz_step_50MHz_sweep.csv", col_names = FALSE)
+```
+
+```{r}
+freq_frame_40_MHz <- tibble(frequency = 50e6, 
+                            step = as.integer(c(1, rep(0, times = 99))))
+
+new_frame <- tibble(frequency = seq(77e6, 82e6, by = 5e5), 
+                    step = as.integer(1))
+
+freq_frame_40_MHz <- rbind(freq_frame_40_MHz, new_frame)
+
+#write_csv(freq_frame_40_MHz, "AOM_frequency_sweeps/Files/20161209_1_MHz_step_40MHz_sweep.csv", col_names = FALSE)
+```
+
+
+### 5 MHz Steps
+
+```{r}
+freq_frame_70_MHz <- tibble(frequency = 50e6, 
+                            step = as.integer(c(1, rep(0, times = 99))))
+
+new_frame <- tibble(frequency = seq(62e6, 82e6, by = 2.5e6), 
+                    step = as.integer(1))
+
+freq_frame_70_MHz <- rbind(freq_frame_70_MHz, new_frame)
+
+#write_csv(freq_frame_70_MHz, "AOM_frequency_sweeps/Files/20161209_5_MHz_step_70MHz_sweep.csv", col_names = FALSE)
+```
+
+```{r}
+freq_frame_60_MHz <- tibble(frequency = 50e6, 
+                            step = as.integer(c(1, rep(0, times = 99))))
+
+new_frame <- tibble(frequency = seq(67e6, 82e6, by = 2.5e6), 
+                    step = as.integer(1))
+
+freq_frame_60_MHz <- rbind(freq_frame_60_MHz, new_frame)
+
+#write_csv(freq_frame_60_MHz, "AOM_frequency_sweeps/Files/20161209_5_MHz_step_60MHz_sweep.csv", col_names = FALSE)
+```
+
+```{r}
+freq_frame_50_MHz <- tibble(frequency = 50e6, 
+                            step = as.integer(c(1, rep(0, times = 99))))
+
+new_frame <- tibble(frequency = seq(72e6, 82e6, by = 2.5e6), 
+                    step = as.integer(1))
+
+freq_frame_50_MHz <- rbind(freq_frame_50_MHz, new_frame)
+
+#write_csv(freq_frame_50_MHz, "AOM_frequency_sweeps/Files/20161209_5_MHz_step_50MHz_sweep.csv", col_names = FALSE)
+```
+
+```{r}
+freq_frame_40_MHz <- tibble(frequency = 50e6, 
+                            step = as.integer(c(1, rep(0, times = 99))))
+
+new_frame <- tibble(frequency = seq(77e6, 82e6, by = 2.5e6), 
+                    step = as.integer(1))
+
+freq_frame_40_MHz <- rbind(freq_frame_40_MHz, new_frame)
+
+#write_csv(freq_frame_40_MHz, "AOM_frequency_sweeps/Files/20161209_5_MHz_step_40MHz_sweep.csv", col_names = FALSE)
+```
