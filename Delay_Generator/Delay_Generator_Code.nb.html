@@ -180,19 +180,29 @@ $(document).ready(function () {
 <h2>2016 12 13 Ionization Delay Sweep</h2>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VtKHN0ZXBfaW5jcmVtZW50ICogZGVsYXlfcG9zaXRpb24pICogMWUzXG5cbmBgYCJ9 -->
-<pre class="r"><code>sum(step_increment * delay_position) * 1e3
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3RlcF9pbmNyZW1lbnQgPC0gYyhyZXAoMCwgdGltZXMgPSA0MCksIFxuICAgICAgICAgICAgICAgICAgICByZXAoYygxLCByZXAoMCwgdGltZXMgPSA0KSksIHRpbWVzID0gNTApLCBcbiAgICAgICAgICAgICAgICAgICAgcmVwKGMoMSwgcmVwKDAsIHRpbWVzID0gNCkpLCB0aW1lcyA9IDE1KSlcbmRlbGF5X3Bvc2l0aW9uIDwtIGMocmVwKDFlLTQsIHRpbWVzID0gMjkwKSwgcmVwKDFlLTMsIHRpbWVzID0gNzUpKVxuc3VtKHN0ZXBfaW5jcmVtZW50ICogZGVsYXlfcG9zaXRpb24pICogMWUzXG5cbmBgYCJ9 -->
+<pre class="r"><code>step_increment &lt;- c(rep(0, times = 40), 
+                    rep(c(1, rep(0, times = 4)), times = 50), 
+                    rep(c(1, rep(0, times = 4)), times = 15))
+delay_position &lt;- c(rep(1e-4, times = 290), rep(1e-3, times = 75))
+sum(step_increment * delay_position) * 1e3
 </code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiWzFdIDIwXG4ifQ== -->
 <pre><code>[1] 20</code></pre>
 <!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaW5kZXggPC0gYygxOmxlbmd0aChzdGVwX2luY3JlbWVudCkpXG5kZWxheV9mcmFtZSA8LSB0aWJibGUoSW5kZXggPSBpbmRleCxcbiAgICAgICAgICAgICAgICAgICAgICBTdGVwX0luY3JlbWVudCA9IHN0ZXBfaW5jcmVtZW50LCBcbiAgICAgICAgICAgICAgICAgICAgICBEZWxheV9Qb3NpdGlvbiA9IGRlbGF5X3Bvc2l0aW9uKVxuYGBgIn0= -->
+<pre class="r"><code>index &lt;- c(1:length(step_increment))
+delay_frame &lt;- tibble(Index = index,
+                      Step_Increment = step_increment, 
+                      Delay_Position = delay_position)</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIkRlbGF5IEdlbmVyYXRvciBDb2RlIg0Kb3V0cHV0OiBodG1sX25vdGVib29rDQotLS0NCg0KVGhpcyBpcyBjb2RlIGZvciBwcm9ncmFtbWluZyB0aGUgREcgNjQ1IGRlbGF5IGdlbmVyYXRvci4NCg0KYGBge3IsIGluY2x1ZGUgPSBGQUxTRSwgbWVzc2FnZSA9IEZBTFNFfQ0KbGlicmFyeSh0aWR5dmVyc2UpDQpgYGANCg0KIyMgMjAxNiAxMiAxMyBJb25pemF0aW9uIERlbGF5IFN3ZWVwDQoNCmBgYHtyfQ0Kc3RlcF9pbmNyZW1lbnQgPC0gYyhyZXAoMCwgdGltZXMgPSA0MCksIA0KICAgICAgICAgICAgICAgICAgICByZXAoYygxLCByZXAoMCwgdGltZXMgPSA0KSksIHRpbWVzID0gNTApLCANCiAgICAgICAgICAgICAgICAgICAgcmVwKGMoMSwgcmVwKDAsIHRpbWVzID0gNCkpLCB0aW1lcyA9IDE1KSkNCg0KZGVsYXlfcG9zaXRpb24gPC0gYyhyZXAoMWUtNCwgdGltZXMgPSAyOTApLCByZXAoMWUtMywgdGltZXMgPSA3NSkpDQoNCnN1bShzdGVwX2luY3JlbWVudCAqIGRlbGF5X3Bvc2l0aW9uKSAqIDFlMw0KDQppbmRleCA8LSBjKDE6bGVuZ3RoKHN0ZXBfaW5jcmVtZW50KSkNCg0KZGVsYXlfZnJhbWUgPC0gdGliYmxlKEluZGV4ID0gaW5kZXgsDQogICAgICAgICAgICAgICAgICAgICAgU3RlcF9JbmNyZW1lbnQgPSBzdGVwX2luY3JlbWVudCwgDQogICAgICAgICAgICAgICAgICAgICAgRGVsYXlfUG9zaXRpb24gPSBkZWxheV9wb3NpdGlvbikNCg0KI3dyaXRlX2NzdihkZWxheV9mcmFtZSwgIkRlbGF5X1N0ZXBwZXIuY3N2IiwgY29sX25hbWVzID0gRkFMU0UpDQoNCmBgYA0KDQo=</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIkRlbGF5IEdlbmVyYXRvciBDb2RlIg0Kb3V0cHV0OiBodG1sX25vdGVib29rDQotLS0NCg0KVGhpcyBpcyBjb2RlIGZvciBwcm9ncmFtbWluZyB0aGUgREcgNjQ1IGRlbGF5IGdlbmVyYXRvci4NCg0KYGBge3IsIGluY2x1ZGUgPSBGQUxTRSwgbWVzc2FnZSA9IEZBTFNFfQ0KbGlicmFyeSh0aWR5dmVyc2UpDQpgYGANCg0KIyMgMjAxNiAxMiAxMyBJb25pemF0aW9uIERlbGF5IFN3ZWVwDQoNCmBgYHtyfQ0Kc3RlcF9pbmNyZW1lbnQgPC0gYyhyZXAoMCwgdGltZXMgPSA0MCksIA0KICAgICAgICAgICAgICAgICAgICByZXAoYygxLCByZXAoMCwgdGltZXMgPSA0KSksIHRpbWVzID0gNTApLCANCiAgICAgICAgICAgICAgICAgICAgcmVwKGMoMSwgcmVwKDAsIHRpbWVzID0gNCkpLCB0aW1lcyA9IDE1KSkNCg0KZGVsYXlfcG9zaXRpb24gPC0gYyhyZXAoMWUtNCwgdGltZXMgPSAyOTApLCByZXAoMWUtMywgdGltZXMgPSA3NSkpDQoNCnN1bShzdGVwX2luY3JlbWVudCAqIGRlbGF5X3Bvc2l0aW9uKSAqIDFlMw0KDQppbmRleCA8LSBjKDE6bGVuZ3RoKHN0ZXBfaW5jcmVtZW50KSkNCg0KZGVsYXlfZnJhbWUgPC0gdGliYmxlKEluZGV4ID0gaW5kZXgsDQogICAgICAgICAgICAgICAgICAgICAgU3RlcF9JbmNyZW1lbnQgPSBzdGVwX2luY3JlbWVudCwgDQogICAgICAgICAgICAgICAgICAgICAgRGVsYXlfUG9zaXRpb24gPSBkZWxheV9wb3NpdGlvbikNCg0KI3dyaXRlX2NzdihkZWxheV9mcmFtZSwgIkRlbGF5X0dlbmVyYXRvci9GaWxlcy9EZWxheV9TdGVwcGVyLmNzdiIsIGNvbF9uYW1lcyA9IEZBTFNFKQ0KDQpgYGANCg0K</div>
 
 
 
