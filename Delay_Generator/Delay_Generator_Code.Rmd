@@ -5,4 +5,28 @@ output: html_notebook
 
 This is code for programming the DG 645 delay generator.
 
+```{r, include = FALSE, message = FALSE}
+library(tidyverse)
+```
+
 ## 2016 12 13 Ionization Delay Sweep
+
+```{r}
+step_increment <- c(rep(0, times = 40), 
+                    rep(c(1, rep(0, times = 4)), times = 50), 
+                    rep(c(1, rep(0, times = 4)), times = 15))
+
+delay_position <- c(rep(1e-4, times = 290), rep(1e-3, times = 75))
+
+sum(step_increment * delay_position) * 1e3
+
+index <- c(1:length(step_increment))
+
+delay_frame <- tibble(Index = index,
+                      Step_Increment = step_increment, 
+                      Delay_Position = delay_position)
+
+#write_csv(delay_frame, "Delay_Stepper.csv", col_names = FALSE)
+
+```
+
