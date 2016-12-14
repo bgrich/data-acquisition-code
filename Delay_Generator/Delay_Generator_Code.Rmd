@@ -9,14 +9,15 @@ This is code for programming the DG 645 delay generator.
 library(tidyverse)
 ```
 
-## 2016 12 13 Ionization Delay Sweep
+## 2016 12 14 Ionization Delay Sweep
 
 ```{r}
-step_increment <- c(rep(0, times = 40), 
-                    rep(c(1, rep(0, times = 4)), times = 50), 
+step_increment <- c(rep(0, times = 50),
+                    rep(c(1, rep(0, times = 4)), times = 10),
+                    rep(c(1, rep(0, times = 4)), times = 49), 
                     rep(c(1, rep(0, times = 4)), times = 15))
 
-delay_position <- c(rep(1e-4, times = 290), rep(1e-3, times = 75))
+delay_position <- c(rep(1e-5, times = 100), rep(1e-4, times = 245), rep(1e-3, times = 75))
 
 sum(step_increment * delay_position) * 1e3
 
