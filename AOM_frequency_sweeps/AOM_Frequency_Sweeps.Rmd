@@ -474,7 +474,7 @@ freq_frame_40_MHz <- rbind(freq_frame_40_MHz, new_frame)
 ## 20161216 Spectroscopy Freq Sweep
 
 ```{r}
-freq_frame <- tibble(frequency = 60e6, step = c(1, rep(0, times = 100)))
+freq_frame <- tibble(frequency = 60e6, step = c(1, rep(0, times = 200)))
 
 for (i in 0:400) {
   frequency_step <- 1e5 
