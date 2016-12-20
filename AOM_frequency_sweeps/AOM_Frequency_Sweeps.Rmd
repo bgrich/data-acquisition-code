@@ -488,3 +488,21 @@ for (i in 0:400) {
 
 # write_csv(freq_frame, "AOM_frequency_sweeps/Files/20161216_Spectroscopy_Frequency_Sweep.csv", col_names = FALSE)
 ```
+
+## 20161220 Spectroscopy Freq Sweep
+
+```{r}
+freq_frame <- tibble(frequency = 60e6, step = c(1, rep(0, times = 200)))
+
+for (i in 0:200) {
+  frequency_step <- 2e5 
+  
+  frequency <- 60e6 + i * frequency_step
+  
+  new_frame <- tibble(frequency = frequency, step = as.integer(c(1, rep(0, times = 9)))) 
+  
+  freq_frame <- rbind(freq_frame, new_frame)
+}
+
+# write_csv(freq_frame, "AOM_frequency_sweeps/Files/20161220_Spectroscopy_Frequency_Sweep.csv", col_names = FALSE)
+```
