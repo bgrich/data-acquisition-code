@@ -761,9 +761,8 @@ for (i in 0:400) {
 <h2>20161220 Spectroscopy Freq Sweep</h2>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZnJlcV9mcmFtZSA8LSB0aWJibGUoZnJlcXVlbmN5ID0gNjBlNiwgc3RlcCA9IGMoMSwgcmVwKDAsIHRpbWVzID0gMjAwKSkpXG5cbmZvciAoaSBpbiAwOjIwMCkge1xuICBmcmVxdWVuY3lfc3RlcCA8LSAyZTUgXG4gIFxuICBmcmVxdWVuY3kgPC0gNjBlNiArIGkgKiBmcmVxdWVuY3lfc3RlcFxuICBcbiAgbmV3X2ZyYW1lIDwtIHRpYmJsZShmcmVxdWVuY3kgPSBmcmVxdWVuY3ksIHN0ZXAgPSBhcy5pbnRlZ2VyKGMoMSwgcmVwKDAsIHRpbWVzID0gOSkpKSkgXG4gIFxuICBmcmVxX2ZyYW1lIDwtIHJiaW5kKGZyZXFfZnJhbWUsIG5ld19mcmFtZSlcbn1cblxuIyB3cml0ZV9jc3YoZnJlcV9mcmFtZSwgXCJBT01fZnJlcXVlbmN5X3N3ZWVwcy9GaWxlcy8yMDE2MTIyMF9TcGVjdHJvc2NvcHlfRnJlcXVlbmN5X1N3ZWVwLmNzdlwiLCBjb2xfbmFtZXMgPSBGQUxTRSlcbmBgYCJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZnJlcV9mcmFtZSA8LSB0aWJibGUoZnJlcXVlbmN5ID0gNjBlNiwgc3RlcCA9IGMoMSwgcmVwKDAsIHRpbWVzID0gMjAwKSkpXG5mb3IgKGkgaW4gMDoyMDApIHtcbiAgZnJlcXVlbmN5X3N0ZXAgPC0gMmU1IFxuICBcbiAgZnJlcXVlbmN5IDwtIDYwZTYgKyBpICogZnJlcXVlbmN5X3N0ZXBcbiAgXG4gIG5ld19mcmFtZSA8LSB0aWJibGUoZnJlcXVlbmN5ID0gZnJlcXVlbmN5LCBzdGVwID0gYXMuaW50ZWdlcihjKDEsIHJlcCgwLCB0aW1lcyA9IDkpKSkpIFxuICBcbiAgZnJlcV9mcmFtZSA8LSByYmluZChmcmVxX2ZyYW1lLCBuZXdfZnJhbWUpXG59XG4jIHdyaXRlX2NzdihmcmVxX2ZyYW1lLCBcIkFPTV9mcmVxdWVuY3lfc3dlZXBzL0ZpbGVzLzIwMTYxMjIwX1NwZWN0cm9zY29weV9GcmVxdWVuY3lfU3dlZXAuY3N2XCIsIGNvbF9uYW1lcyA9IEZBTFNFKVxuYGBgIn0= -->
 <pre class="r"><code>freq_frame &lt;- tibble(frequency = 60e6, step = c(1, rep(0, times = 200)))
-
 for (i in 0:200) {
   frequency_step &lt;- 2e5 
   
@@ -773,7 +772,6 @@ for (i in 0:200) {
   
   freq_frame &lt;- rbind(freq_frame, new_frame)
 }
-
 # write_csv(freq_frame, &quot;AOM_frequency_sweeps/Files/20161220_Spectroscopy_Frequency_Sweep.csv&quot;, col_names = FALSE)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
@@ -783,7 +781,7 @@ for (i in 0:200) {
 <h2>20170106 Spectroscopy Freq Sweep</h2>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZnJlcV9mcmFtZSA8LSB0aWJibGUoZnJlcXVlbmN5ID0gNzBlNiwgc3RlcCA9IGMoMSwgcmVwKDAsIHRpbWVzID0gMjAwKSkpXG5mb3IgKGkgaW4gMDoxNTApIHtcbiAgZnJlcXVlbmN5X3N0ZXAgPC0gMmU1IFxuICBcbiAgZnJlcXVlbmN5IDwtIDcwZTYgKyBpICogZnJlcXVlbmN5X3N0ZXBcbiAgXG4gIG5ld19mcmFtZSA8LSB0aWJibGUoZnJlcXVlbmN5ID0gZnJlcXVlbmN5LCBzdGVwID0gYXMuaW50ZWdlcihjKDEsIHJlcCgwLCB0aW1lcyA9IDkpKSkpIFxuICBcbiAgZnJlcV9mcmFtZSA8LSByYmluZChmcmVxX2ZyYW1lLCBuZXdfZnJhbWUpXG59XG4jIHdyaXRlX2NzdihmcmVxX2ZyYW1lLCBcIkFPTV9mcmVxdWVuY3lfc3dlZXBzL0ZpbGVzLzIwMTYxMjIwX1NwZWN0cm9zY29weV9GcmVxdWVuY3lfU3dlZXAuY3N2XCIsIGNvbF9uYW1lcyA9IEZBTFNFKVxuYGBgIn0= -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZnJlcV9mcmFtZSA8LSB0aWJibGUoZnJlcXVlbmN5ID0gNzBlNiwgc3RlcCA9IGMoMSwgcmVwKDAsIHRpbWVzID0gMjAwKSkpXG5mb3IgKGkgaW4gMDoxNTApIHtcbiAgZnJlcXVlbmN5X3N0ZXAgPC0gMmU1IFxuICBcbiAgZnJlcXVlbmN5IDwtIDcwZTYgKyBpICogZnJlcXVlbmN5X3N0ZXBcbiAgXG4gIG5ld19mcmFtZSA8LSB0aWJibGUoZnJlcXVlbmN5ID0gZnJlcXVlbmN5LCBzdGVwID0gYXMuaW50ZWdlcihjKDEsIHJlcCgwLCB0aW1lcyA9IDkpKSkpIFxuICBcbiAgZnJlcV9mcmFtZSA8LSByYmluZChmcmVxX2ZyYW1lLCBuZXdfZnJhbWUpXG59XG4jIHdyaXRlX2NzdihmcmVxX2ZyYW1lLCBcIkFPTV9mcmVxdWVuY3lfc3dlZXBzL0ZpbGVzLzIwMTcwMTA2X1NwZWN0cm9zY29weV9GcmVxdWVuY3lfU3dlZXAuY3N2XCIsIGNvbF9uYW1lcyA9IEZBTFNFKVxuYGBgIn0= -->
 <pre class="r"><code>freq_frame &lt;- tibble(frequency = 70e6, step = c(1, rep(0, times = 200)))
 for (i in 0:150) {
   frequency_step &lt;- 2e5 
@@ -794,7 +792,7 @@ for (i in 0:150) {
   
   freq_frame &lt;- rbind(freq_frame, new_frame)
 }
-# write_csv(freq_frame, &quot;AOM_frequency_sweeps/Files/20161220_Spectroscopy_Frequency_Sweep.csv&quot;, col_names = FALSE)</code></pre>
+# write_csv(freq_frame, &quot;AOM_frequency_sweeps/Files/20170106_Spectroscopy_Frequency_Sweep.csv&quot;, col_names = FALSE)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 </div>
