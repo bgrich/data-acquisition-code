@@ -52,3 +52,59 @@ delay_frame <- tibble(Index = index,
 
 ```
 
+## 2017 02 13 MOT Turn Off Delay Sweep Longer Times
+
+```{r}
+step_increment <- c(rep(0, times = 40),
+                    rep(c(1, rep(0, times = 4)), times = 10),
+                    rep(c(1, rep(0, times = 4)), times = 49))
+
+delay_position <- c(rep(1e-3, times = 90), rep(1e-2, times = 245))
+
+sum(step_increment * delay_position) * 1e3
+
+index <- c(1:length(step_increment))
+
+delay_frame <- tibble(Index = index,
+                      Step_Increment = step_increment, 
+                      Delay_Position = delay_position)
+
+#write_csv(delay_frame, "Delay_Generator/Files/20170213_MOT_Turn_Off.csv", col_names = FALSE)
+
+```
+
+```{r}
+step_increment <- c(rep(0, times = 40),
+                    rep(c(1, rep(0, times = 4)), times = 10),
+                    rep(c(1, rep(0, times = 4)), times = 19))
+
+delay_position <- c(rep(1e-3, times = 90), rep(1e-2, times = 95))
+
+sum(step_increment * delay_position) * 1e3
+
+index <- c(1:length(step_increment))
+
+delay_frame <- tibble(Index = index,
+                      Step_Increment = step_increment, 
+                      Delay_Position = delay_position)
+
+#write_csv(delay_frame, "Delay_Generator/Files/20170213_MOT_Turn_Off_First_Half.csv", col_names = FALSE)
+
+```
+
+```{r}
+step_increment <- c(rep(c(1, rep(0, times = 4)), times = 30))
+
+delay_position <- c(rep(1e-2, times = 150))
+
+sum(step_increment * delay_position) * 1e3
+
+index <- c(1:length(step_increment))
+
+delay_frame <- tibble(Index = index,
+                      Step_Increment = step_increment, 
+                      Delay_Position = delay_position)
+
+#write_csv(delay_frame, "Delay_Generator/Files/20170213_MOT_Turn_Off_Second_Half.csv", col_names = FALSE)
+
+```

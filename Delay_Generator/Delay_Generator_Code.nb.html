@@ -224,10 +224,72 @@ delay_frame &lt;- tibble(Index = index,
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+</div>
+<div id="mot-turn-off-delay-sweep-longer-times" class="section level2">
+<h2>2017 02 13 MOT Turn Off Delay Sweep Longer Times</h2>
 <!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3RlcF9pbmNyZW1lbnQgPC0gYyhyZXAoMCwgdGltZXMgPSA0MCksXG4gICAgICAgICAgICAgICAgICAgIHJlcChjKDEsIHJlcCgwLCB0aW1lcyA9IDQpKSwgdGltZXMgPSAxMCksXG4gICAgICAgICAgICAgICAgICAgIHJlcChjKDEsIHJlcCgwLCB0aW1lcyA9IDQpKSwgdGltZXMgPSA0OSkpXG5kZWxheV9wb3NpdGlvbiA8LSBjKHJlcCgxZS0zLCB0aW1lcyA9IDkwKSwgcmVwKDFlLTIsIHRpbWVzID0gMjQ1KSlcbnN1bShzdGVwX2luY3JlbWVudCAqIGRlbGF5X3Bvc2l0aW9uKSAqIDFlM1xuYGBgIn0= -->
+<pre class="r"><code>step_increment &lt;- c(rep(0, times = 40),
+                    rep(c(1, rep(0, times = 4)), times = 10),
+                    rep(c(1, rep(0, times = 4)), times = 49))
+delay_position &lt;- c(rep(1e-3, times = 90), rep(1e-2, times = 245))
+sum(step_increment * delay_position) * 1e3</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDUwMFxuIn0= -->
+<pre><code>[1] 500</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaW5kZXggPC0gYygxOmxlbmd0aChzdGVwX2luY3JlbWVudCkpXG5kZWxheV9mcmFtZSA8LSB0aWJibGUoSW5kZXggPSBpbmRleCxcbiAgICAgICAgICAgICAgICAgICAgICBTdGVwX0luY3JlbWVudCA9IHN0ZXBfaW5jcmVtZW50LCBcbiAgICAgICAgICAgICAgICAgICAgICBEZWxheV9Qb3NpdGlvbiA9IGRlbGF5X3Bvc2l0aW9uKVxuI3dyaXRlX2NzdihkZWxheV9mcmFtZSwgXCJEZWxheV9HZW5lcmF0b3IvRmlsZXMvMjAxNzAyMTNfTU9UX1R1cm5fT2ZmLmNzdlwiLCBjb2xfbmFtZXMgPSBGQUxTRSlcbmBgYCJ9 -->
+<pre class="r"><code>index &lt;- c(1:length(step_increment))
+delay_frame &lt;- tibble(Index = index,
+                      Step_Increment = step_increment, 
+                      Delay_Position = delay_position)
+#write_csv(delay_frame, &quot;Delay_Generator/Files/20170213_MOT_Turn_Off.csv&quot;, col_names = FALSE)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3RlcF9pbmNyZW1lbnQgPC0gYyhyZXAoMCwgdGltZXMgPSA0MCksXG4gICAgICAgICAgICAgICAgICAgIHJlcChjKDEsIHJlcCgwLCB0aW1lcyA9IDQpKSwgdGltZXMgPSAxMCksXG4gICAgICAgICAgICAgICAgICAgIHJlcChjKDEsIHJlcCgwLCB0aW1lcyA9IDQpKSwgdGltZXMgPSAxOSkpXG5kZWxheV9wb3NpdGlvbiA8LSBjKHJlcCgxZS0zLCB0aW1lcyA9IDkwKSwgcmVwKDFlLTIsIHRpbWVzID0gOTUpKVxuc3VtKHN0ZXBfaW5jcmVtZW50ICogZGVsYXlfcG9zaXRpb24pICogMWUzXG5gYGAifQ== -->
+<pre class="r"><code>step_increment &lt;- c(rep(0, times = 40),
+                    rep(c(1, rep(0, times = 4)), times = 10),
+                    rep(c(1, rep(0, times = 4)), times = 19))
+delay_position &lt;- c(rep(1e-3, times = 90), rep(1e-2, times = 95))
+sum(step_increment * delay_position) * 1e3</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDIwMFxuIn0= -->
+<pre><code>[1] 200</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaW5kZXggPC0gYygxOmxlbmd0aChzdGVwX2luY3JlbWVudCkpXG5kZWxheV9mcmFtZSA8LSB0aWJibGUoSW5kZXggPSBpbmRleCxcbiAgICAgICAgICAgICAgICAgICAgICBTdGVwX0luY3JlbWVudCA9IHN0ZXBfaW5jcmVtZW50LCBcbiAgICAgICAgICAgICAgICAgICAgICBEZWxheV9Qb3NpdGlvbiA9IGRlbGF5X3Bvc2l0aW9uKVxuI3dyaXRlX2NzdihkZWxheV9mcmFtZSwgXCJEZWxheV9HZW5lcmF0b3IvRmlsZXMvMjAxNzAyMTNfTU9UX1R1cm5fT2ZmX0ZpcnN0X0hhbGYuY3N2XCIsIGNvbF9uYW1lcyA9IEZBTFNFKVxuYGBgIn0= -->
+<pre class="r"><code>index &lt;- c(1:length(step_increment))
+delay_frame &lt;- tibble(Index = index,
+                      Step_Increment = step_increment, 
+                      Delay_Position = delay_position)
+#write_csv(delay_frame, &quot;Delay_Generator/Files/20170213_MOT_Turn_Off_First_Half.csv&quot;, col_names = FALSE)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3RlcF9pbmNyZW1lbnQgPC0gYyhyZXAoYygxLCByZXAoMCwgdGltZXMgPSA0KSksIHRpbWVzID0gMzApKVxuZGVsYXlfcG9zaXRpb24gPC0gYyhyZXAoMWUtMiwgdGltZXMgPSAxNTApKVxuc3VtKHN0ZXBfaW5jcmVtZW50ICogZGVsYXlfcG9zaXRpb24pICogMWUzXG5gYGAifQ== -->
+<pre class="r"><code>step_increment &lt;- c(rep(c(1, rep(0, times = 4)), times = 30))
+delay_position &lt;- c(rep(1e-2, times = 150))
+sum(step_increment * delay_position) * 1e3</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDMwMFxuIn0= -->
+<pre><code>[1] 300</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaW5kZXggPC0gYygxOmxlbmd0aChzdGVwX2luY3JlbWVudCkpXG5kZWxheV9mcmFtZSA8LSB0aWJibGUoSW5kZXggPSBpbmRleCxcbiAgICAgICAgICAgICAgICAgICAgICBTdGVwX0luY3JlbWVudCA9IHN0ZXBfaW5jcmVtZW50LCBcbiAgICAgICAgICAgICAgICAgICAgICBEZWxheV9Qb3NpdGlvbiA9IGRlbGF5X3Bvc2l0aW9uKVxuI3dyaXRlX2NzdihkZWxheV9mcmFtZSwgXCJEZWxheV9HZW5lcmF0b3IvRmlsZXMvMjAxNzAyMTNfTU9UX1R1cm5fT2ZmX1NlY29uZF9IYWxmLmNzdlwiLCBjb2xfbmFtZXMgPSBGQUxTRSlcbmBgYCJ9 -->
+<pre class="r"><code>index &lt;- c(1:length(step_increment))
+delay_frame &lt;- tibble(Index = index,
+                      Step_Increment = step_increment, 
+                      Delay_Position = delay_position)
+#write_csv(delay_frame, &quot;Delay_Generator/Files/20170213_MOT_Turn_Off_Second_Half.csv&quot;, col_names = FALSE)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
 </div>
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIkRlbGF5IEdlbmVyYXRvciBDb2RlIg0Kb3V0cHV0OiBodG1sX25vdGVib29rDQotLS0NCg0KVGhpcyBpcyBjb2RlIGZvciBwcm9ncmFtbWluZyB0aGUgREcgNjQ1IGRlbGF5IGdlbmVyYXRvci4NCg0KYGBge3IsIGluY2x1ZGUgPSBGQUxTRSwgbWVzc2FnZSA9IEZBTFNFfQ0KbGlicmFyeSh0aWR5dmVyc2UpDQpgYGANCg0KIyMgMjAxNiAxMiAxNCBJb25pemF0aW9uIERlbGF5IFN3ZWVwDQoNCmBgYHtyfQ0Kc3RlcF9pbmNyZW1lbnQgPC0gYyhyZXAoMCwgdGltZXMgPSA1MCksDQogICAgICAgICAgICAgICAgICAgIHJlcChjKDEsIHJlcCgwLCB0aW1lcyA9IDQpKSwgdGltZXMgPSAxMCksDQogICAgICAgICAgICAgICAgICAgIHJlcChjKDEsIHJlcCgwLCB0aW1lcyA9IDQpKSwgdGltZXMgPSA0OSksIA0KICAgICAgICAgICAgICAgICAgICByZXAoYygxLCByZXAoMCwgdGltZXMgPSA0KSksIHRpbWVzID0gMTUpKQ0KDQpkZWxheV9wb3NpdGlvbiA8LSBjKHJlcCgxZS01LCB0aW1lcyA9IDEwMCksIHJlcCgxZS00LCB0aW1lcyA9IDI0NSksIHJlcCgxZS0zLCB0aW1lcyA9IDc1KSkNCg0Kc3VtKHN0ZXBfaW5jcmVtZW50ICogZGVsYXlfcG9zaXRpb24pICogMWUzDQoNCmluZGV4IDwtIGMoMTpsZW5ndGgoc3RlcF9pbmNyZW1lbnQpKQ0KDQpkZWxheV9mcmFtZSA8LSB0aWJibGUoSW5kZXggPSBpbmRleCwNCiAgICAgICAgICAgICAgICAgICAgICBTdGVwX0luY3JlbWVudCA9IHN0ZXBfaW5jcmVtZW50LCANCiAgICAgICAgICAgICAgICAgICAgICBEZWxheV9Qb3NpdGlvbiA9IGRlbGF5X3Bvc2l0aW9uKQ0KDQojd3JpdGVfY3N2KGRlbGF5X2ZyYW1lLCAiRGVsYXlfR2VuZXJhdG9yL0ZpbGVzL0RlbGF5X1N0ZXBwZXIuY3N2IiwgY29sX25hbWVzID0gRkFMU0UpDQoNCmBgYA0KDQojIyAyMDE3IDAyIDEyIE1PVCBUdXJuIE9mZiBEZWxheSBTd2VlcA0KDQpgYGB7cn0NCnN0ZXBfaW5jcmVtZW50IDwtIGMocmVwKDAsIHRpbWVzID0gNDApLA0KICAgICAgICAgICAgICAgICAgICByZXAoYygxLCByZXAoMCwgdGltZXMgPSA0KSksIHRpbWVzID0gMTApLA0KICAgICAgICAgICAgICAgICAgICByZXAoYygxLCByZXAoMCwgdGltZXMgPSA0KSksIHRpbWVzID0gNDkpKQ0KDQpkZWxheV9wb3NpdGlvbiA8LSBjKHJlcCgxZS00LCB0aW1lcyA9IDkwKSwgcmVwKDFlLTMsIHRpbWVzID0gMjQ1KSkNCg0Kc3VtKHN0ZXBfaW5jcmVtZW50ICogZGVsYXlfcG9zaXRpb24pICogMWUzDQoNCmluZGV4IDwtIGMoMTpsZW5ndGgoc3RlcF9pbmNyZW1lbnQpKQ0KDQpkZWxheV9mcmFtZSA8LSB0aWJibGUoSW5kZXggPSBpbmRleCwNCiAgICAgICAgICAgICAgICAgICAgICBTdGVwX0luY3JlbWVudCA9IHN0ZXBfaW5jcmVtZW50LCANCiAgICAgICAgICAgICAgICAgICAgICBEZWxheV9Qb3NpdGlvbiA9IGRlbGF5X3Bvc2l0aW9uKQ0KDQojd3JpdGVfY3N2KGRlbGF5X2ZyYW1lLCAiRGVsYXlfR2VuZXJhdG9yL0ZpbGVzLzIwMTcwMjEyX01PVF9UdXJuX09mZi5jc3YiLCBjb2xfbmFtZXMgPSBGQUxTRSkNCg0KYGBgDQoNCg==</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIkRlbGF5IEdlbmVyYXRvciBDb2RlIg0Kb3V0cHV0OiBodG1sX25vdGVib29rDQotLS0NCg0KVGhpcyBpcyBjb2RlIGZvciBwcm9ncmFtbWluZyB0aGUgREcgNjQ1IGRlbGF5IGdlbmVyYXRvci4NCg0KYGBge3IsIGluY2x1ZGUgPSBGQUxTRSwgbWVzc2FnZSA9IEZBTFNFfQ0KbGlicmFyeSh0aWR5dmVyc2UpDQpgYGANCg0KIyMgMjAxNiAxMiAxNCBJb25pemF0aW9uIERlbGF5IFN3ZWVwDQoNCmBgYHtyfQ0Kc3RlcF9pbmNyZW1lbnQgPC0gYyhyZXAoMCwgdGltZXMgPSA1MCksDQogICAgICAgICAgICAgICAgICAgIHJlcChjKDEsIHJlcCgwLCB0aW1lcyA9IDQpKSwgdGltZXMgPSAxMCksDQogICAgICAgICAgICAgICAgICAgIHJlcChjKDEsIHJlcCgwLCB0aW1lcyA9IDQpKSwgdGltZXMgPSA0OSksIA0KICAgICAgICAgICAgICAgICAgICByZXAoYygxLCByZXAoMCwgdGltZXMgPSA0KSksIHRpbWVzID0gMTUpKQ0KDQpkZWxheV9wb3NpdGlvbiA8LSBjKHJlcCgxZS01LCB0aW1lcyA9IDEwMCksIHJlcCgxZS00LCB0aW1lcyA9IDI0NSksIHJlcCgxZS0zLCB0aW1lcyA9IDc1KSkNCg0Kc3VtKHN0ZXBfaW5jcmVtZW50ICogZGVsYXlfcG9zaXRpb24pICogMWUzDQoNCmluZGV4IDwtIGMoMTpsZW5ndGgoc3RlcF9pbmNyZW1lbnQpKQ0KDQpkZWxheV9mcmFtZSA8LSB0aWJibGUoSW5kZXggPSBpbmRleCwNCiAgICAgICAgICAgICAgICAgICAgICBTdGVwX0luY3JlbWVudCA9IHN0ZXBfaW5jcmVtZW50LCANCiAgICAgICAgICAgICAgICAgICAgICBEZWxheV9Qb3NpdGlvbiA9IGRlbGF5X3Bvc2l0aW9uKQ0KDQojd3JpdGVfY3N2KGRlbGF5X2ZyYW1lLCAiRGVsYXlfR2VuZXJhdG9yL0ZpbGVzL0RlbGF5X1N0ZXBwZXIuY3N2IiwgY29sX25hbWVzID0gRkFMU0UpDQoNCmBgYA0KDQojIyAyMDE3IDAyIDEyIE1PVCBUdXJuIE9mZiBEZWxheSBTd2VlcA0KDQpgYGB7cn0NCnN0ZXBfaW5jcmVtZW50IDwtIGMocmVwKDAsIHRpbWVzID0gNDApLA0KICAgICAgICAgICAgICAgICAgICByZXAoYygxLCByZXAoMCwgdGltZXMgPSA0KSksIHRpbWVzID0gMTApLA0KICAgICAgICAgICAgICAgICAgICByZXAoYygxLCByZXAoMCwgdGltZXMgPSA0KSksIHRpbWVzID0gNDkpKQ0KDQpkZWxheV9wb3NpdGlvbiA8LSBjKHJlcCgxZS00LCB0aW1lcyA9IDkwKSwgcmVwKDFlLTMsIHRpbWVzID0gMjQ1KSkNCg0Kc3VtKHN0ZXBfaW5jcmVtZW50ICogZGVsYXlfcG9zaXRpb24pICogMWUzDQoNCmluZGV4IDwtIGMoMTpsZW5ndGgoc3RlcF9pbmNyZW1lbnQpKQ0KDQpkZWxheV9mcmFtZSA8LSB0aWJibGUoSW5kZXggPSBpbmRleCwNCiAgICAgICAgICAgICAgICAgICAgICBTdGVwX0luY3JlbWVudCA9IHN0ZXBfaW5jcmVtZW50LCANCiAgICAgICAgICAgICAgICAgICAgICBEZWxheV9Qb3NpdGlvbiA9IGRlbGF5X3Bvc2l0aW9uKQ0KDQojd3JpdGVfY3N2KGRlbGF5X2ZyYW1lLCAiRGVsYXlfR2VuZXJhdG9yL0ZpbGVzLzIwMTcwMjEyX01PVF9UdXJuX09mZi5jc3YiLCBjb2xfbmFtZXMgPSBGQUxTRSkNCg0KYGBgDQoNCiMjIDIwMTcgMDIgMTMgTU9UIFR1cm4gT2ZmIERlbGF5IFN3ZWVwIExvbmdlciBUaW1lcw0KDQpgYGB7cn0NCnN0ZXBfaW5jcmVtZW50IDwtIGMocmVwKDAsIHRpbWVzID0gNDApLA0KICAgICAgICAgICAgICAgICAgICByZXAoYygxLCByZXAoMCwgdGltZXMgPSA0KSksIHRpbWVzID0gMTApLA0KICAgICAgICAgICAgICAgICAgICByZXAoYygxLCByZXAoMCwgdGltZXMgPSA0KSksIHRpbWVzID0gNDkpKQ0KDQpkZWxheV9wb3NpdGlvbiA8LSBjKHJlcCgxZS0zLCB0aW1lcyA9IDkwKSwgcmVwKDFlLTIsIHRpbWVzID0gMjQ1KSkNCg0Kc3VtKHN0ZXBfaW5jcmVtZW50ICogZGVsYXlfcG9zaXRpb24pICogMWUzDQoNCmluZGV4IDwtIGMoMTpsZW5ndGgoc3RlcF9pbmNyZW1lbnQpKQ0KDQpkZWxheV9mcmFtZSA8LSB0aWJibGUoSW5kZXggPSBpbmRleCwNCiAgICAgICAgICAgICAgICAgICAgICBTdGVwX0luY3JlbWVudCA9IHN0ZXBfaW5jcmVtZW50LCANCiAgICAgICAgICAgICAgICAgICAgICBEZWxheV9Qb3NpdGlvbiA9IGRlbGF5X3Bvc2l0aW9uKQ0KDQojd3JpdGVfY3N2KGRlbGF5X2ZyYW1lLCAiRGVsYXlfR2VuZXJhdG9yL0ZpbGVzLzIwMTcwMjEzX01PVF9UdXJuX09mZi5jc3YiLCBjb2xfbmFtZXMgPSBGQUxTRSkNCg0KYGBgDQoNCmBgYHtyfQ0Kc3RlcF9pbmNyZW1lbnQgPC0gYyhyZXAoMCwgdGltZXMgPSA0MCksDQogICAgICAgICAgICAgICAgICAgIHJlcChjKDEsIHJlcCgwLCB0aW1lcyA9IDQpKSwgdGltZXMgPSAxMCksDQogICAgICAgICAgICAgICAgICAgIHJlcChjKDEsIHJlcCgwLCB0aW1lcyA9IDQpKSwgdGltZXMgPSAxOSkpDQoNCmRlbGF5X3Bvc2l0aW9uIDwtIGMocmVwKDFlLTMsIHRpbWVzID0gOTApLCByZXAoMWUtMiwgdGltZXMgPSA5NSkpDQoNCnN1bShzdGVwX2luY3JlbWVudCAqIGRlbGF5X3Bvc2l0aW9uKSAqIDFlMw0KDQppbmRleCA8LSBjKDE6bGVuZ3RoKHN0ZXBfaW5jcmVtZW50KSkNCg0KZGVsYXlfZnJhbWUgPC0gdGliYmxlKEluZGV4ID0gaW5kZXgsDQogICAgICAgICAgICAgICAgICAgICAgU3RlcF9JbmNyZW1lbnQgPSBzdGVwX2luY3JlbWVudCwgDQogICAgICAgICAgICAgICAgICAgICAgRGVsYXlfUG9zaXRpb24gPSBkZWxheV9wb3NpdGlvbikNCg0KI3dyaXRlX2NzdihkZWxheV9mcmFtZSwgIkRlbGF5X0dlbmVyYXRvci9GaWxlcy8yMDE3MDIxM19NT1RfVHVybl9PZmZfRmlyc3RfSGFsZi5jc3YiLCBjb2xfbmFtZXMgPSBGQUxTRSkNCg0KYGBgDQoNCmBgYHtyfQ0Kc3RlcF9pbmNyZW1lbnQgPC0gYyhyZXAoYygxLCByZXAoMCwgdGltZXMgPSA0KSksIHRpbWVzID0gMzApKQ0KDQpkZWxheV9wb3NpdGlvbiA8LSBjKHJlcCgxZS0yLCB0aW1lcyA9IDE1MCkpDQoNCnN1bShzdGVwX2luY3JlbWVudCAqIGRlbGF5X3Bvc2l0aW9uKSAqIDFlMw0KDQppbmRleCA8LSBjKDE6bGVuZ3RoKHN0ZXBfaW5jcmVtZW50KSkNCg0KZGVsYXlfZnJhbWUgPC0gdGliYmxlKEluZGV4ID0gaW5kZXgsDQogICAgICAgICAgICAgICAgICAgICAgU3RlcF9JbmNyZW1lbnQgPSBzdGVwX2luY3JlbWVudCwgDQogICAgICAgICAgICAgICAgICAgICAgRGVsYXlfUG9zaXRpb24gPSBkZWxheV9wb3NpdGlvbikNCg0KI3dyaXRlX2NzdihkZWxheV9mcmFtZSwgIkRlbGF5X0dlbmVyYXRvci9GaWxlcy8yMDE3MDIxM19NT1RfVHVybl9PZmZfU2Vjb25kX0hhbGYuY3N2IiwgY29sX25hbWVzID0gRkFMU0UpDQoNCmBgYA==</div>
 
 
 
