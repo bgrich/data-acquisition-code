@@ -108,3 +108,69 @@ delay_frame <- tibble(Index = index,
 #write_csv(delay_frame, "Delay_Generator/Files/20170213_MOT_Turn_Off_Second_Half.csv", col_names = FALSE)
 
 ```
+
+```{r}
+step_increment <- c(rep(0, times = 40),
+                    rep(c(2, rep(0, times = 4)), times = 5),
+                    rep(c(2, rep(0, times = 4)), times = 25))
+
+delay_position <- c(rep(1e-3, times = 65), rep(1e-2, times = 125))
+
+sum(step_increment * delay_position) * 1e3
+
+index <- c(1:length(step_increment))
+
+delay_frame <- tibble(Index = index,
+                      Step_Increment = step_increment, 
+                      Delay_Position = delay_position)
+
+#write_csv(delay_frame, "Delay_Generator/Files/20170213_MOT_Turn_Off_2_step.csv", col_names = FALSE)
+
+```
+
+## 2017 02 14 MOT Turn Off Delay Sweep Longer Times
+
+
+```{r}
+step_increment <- c(rep(0, times = 40),
+                    rep(c(2, rep(0, times = 4)), times = 10),
+                    rep(c(1, rep(0, times = 4)), times = 13))
+
+delay_position <- c(rep(1e-2, times = 90), 
+                    rep(1e-1, times = 65))
+
+sum(step_increment * delay_position) * 1e3
+
+index <- c(1:length(step_increment))
+
+delay_frame <- tibble(Index = index,
+                      Step_Increment = step_increment, 
+                      Delay_Position = delay_position)
+
+#write_csv(delay_frame, "Delay_Generator/Files/20170214_MOT_Turn_Off.csv", col_names = FALSE)
+
+```
+
+## 2017 02 15 MOT Turn On Delay Sweep
+
+```{r}
+step_increment <- c(rep(0, times = 40),
+                    rep(c(1, rep(0, times = 4)), times = 10),
+                    rep(c(1, rep(0, times = 4)), times = 9), 
+                    rep(c(1, rep(0, times = 4)), times = 14))
+
+delay_position <- c(rep(1e-3, times = 90), 
+                    rep(1e-2, times = 45), 
+                    rep(1e-1, times = 70))
+
+sum(step_increment * delay_position) * 1e3
+
+index <- c(1:length(step_increment))
+
+delay_frame <- tibble(Index = index,
+                      Step_Increment = step_increment, 
+                      Delay_Position = delay_position)
+
+#write_csv(delay_frame, "Delay_Generator/Files/20170215_MOT_Turn_On.csv", col_names = FALSE)
+
+```
