@@ -178,10 +178,10 @@ delay_frame <- tibble(Index = index,
 ```{r}
 step_increment <- c(rep(0, times = 40), 
                     rep(c(4, rep(0, times = 4)), times = 5),
-                    rep(c(2, rep(0, times = 4)), times = 14))
+                    rep(c(2, rep(0, times = 4)), times = 24))
 
 delay_position <- c(rep(1e-2, times = 65), 
-                    rep(1e-1, times = 70))
+                    rep(1e-1, times = 120))
 
 sum(step_increment * delay_position) * 1e3
 
@@ -192,5 +192,25 @@ delay_frame <- tibble(Index = index,
                       Delay_Position = delay_position)
 
 #write_csv(delay_frame, "Delay_Generator/Files/20170215_MOT_Turn_On_Faster_Steps.csv", col_names = FALSE)
+
+```
+
+## 2017 02 16 MOT Rise Time with higher resolution
+
+```{r}
+step_increment <- c(rep(0, times = 40),
+                    rep(c(1, rep(0, times = 4)), times = 30))
+
+delay_position <- c(rep(1e-2, times = 190))
+
+sum(step_increment * delay_position) * 1e3
+
+index <- c(1:length(step_increment))
+
+delay_frame <- tibble(Index = index,
+                      Step_Increment = step_increment, 
+                      Delay_Position = delay_position)
+
+#write_csv(delay_frame, "Delay_Generator/Files/20170216_MOT_Turn_On.csv", col_names = FALSE)
 
 ```
