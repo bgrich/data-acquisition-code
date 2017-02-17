@@ -237,7 +237,39 @@ delay_frame <- tibble(Index = index,
 
 ```
 
+## 2017 02 17 Atom Control Delay
 
+```{r}
+step_increment <- c(rep(0, times = 40),
+                    c(3, rep(0, times = 14)), 
+                    c(2, rep(0, times = 14)), 
+                    c(5, rep(0, times = 14)), 
+                    c(1, rep(0, times = 14)), 
+                    c(1, rep(0, times = 14)), 
+                    c(2, rep(0, times = 14)), 
+                    c(5, rep(0, times = 14)), 
+                    c(1, rep(0, times = 14)))
+                    
+delay_position <- c(rep(1e-2, times = 55),
+                    rep(1e-2, times = 15), 
+                    rep(1e-2, times = 15), 
+                    rep(1e-1, times = 15),
+                    rep(1e-1, times = 15), 
+                    rep(1e-1, times = 15),
+                    rep(1e-1, times = 15), 
+                    rep(1, times = 15))
+
+sum(step_increment * delay_position) * 1e3
+
+index <- c(1:length(step_increment))
+
+delay_frame <- tibble(Index = index,
+                      Step_Increment = step_increment, 
+                      Delay_Position = delay_position)
+
+#write_csv(delay_frame, "Delay_Generator/Files/20170217_Atom_Control_Delay.csv", col_names = FALSE)
+
+```
 
 
 
