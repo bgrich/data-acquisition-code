@@ -273,4 +273,3 @@ delay_frame <- tibble(Index = index,
 
 
 
-
